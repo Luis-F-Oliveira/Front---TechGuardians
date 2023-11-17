@@ -1,7 +1,6 @@
 import LoginImg from"../../assets/loginImg.png"
 import { Input } from "../../Components/Input/style"
 import { Button } from "../../Components/Button/style"
-import { Link } from "react-router-dom"
 const index = () => {
   const handleSubmit = () => {}
   return (
@@ -17,7 +16,6 @@ const index = () => {
             <label className="mb-8">
               <span className="block mb-2">Senha</span>
               <Input type="password" placeholder="Senha" required/>
-            <Link className="ml-1" to={"/register"}>Não possui conta?</Link>
             </label>
             <Button className="w-44">Login</Button>
           </form>
