@@ -1,11 +1,16 @@
 import LoginImg from"../../assets/loginImg.png"
 import { Input } from "../../Components/Input/style"
 import { Button } from "../../Components/Button/style"
-const index = () => {
-  const handleSubmit = () => {}
+import { useNavigate } from "react-router-dom"
+const Login = () => {
+  const link = useNavigate()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    link('/dashboard')
+  }
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="bg-white w-800 h-96 grid grid-cols-2 rounded">
+      <div className="bg-white w-800 h-96 grid grid-cols-2 rounded shadow-lg shadow-2xl ">
         <div className="flex w-96 h-full justify-center items-center col-start-1 col-end-3">
           <form className="justify-center items-center flex-col flex w-96 mb-8" onSubmit={handleSubmit}>
           <h1 className="mb-3 font-bold text-3xl">Login</h1>
@@ -28,4 +33,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Login
