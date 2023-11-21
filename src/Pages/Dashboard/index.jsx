@@ -6,7 +6,7 @@ import Graphics from "../../Components/Graphics";
 import { dashContext } from "../../Context/DashContext";
 import { useContext } from "react";
 const Dashboard = () => {
-  const { render, renderTwo, renderLast } = useContext(dashContext)
+  const { render, renderTwo } = useContext(dashContext)
   return (
     <div className="relative flex">
       <div className="absolute left-0 z-10">
@@ -22,7 +22,7 @@ const Dashboard = () => {
         {renderTwo === true && render === false ? (
           <TableRoom/>
         ): null}
-        {renderLast === true && render === false && renderTwo === false ? (
+        {render === false && renderTwo === false ? (
           <Graphics/>
         ): null}
       </div>

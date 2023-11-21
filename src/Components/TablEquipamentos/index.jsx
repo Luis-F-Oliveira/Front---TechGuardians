@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
+// import { toast } from "react-toastify"
 import axios from "axios"
-import { IoCloseOutline } from "react-icons/io5"
 import { Input } from "../Input/style"
 import { Button } from "../Button/style"
 import { FaTrash } from "react-icons/fa6"
+import { useEffect, useState } from "react"
+import { IoCloseOutline } from "react-icons/io5"
 import { FaRegEdit } from "react-icons/fa"
-import { toast } from "react-toastify"
 import ReactLoading from 'react-loading'
 
 const TableBlocks = () => {
@@ -63,17 +63,17 @@ const TableBlocks = () => {
             .catch((error) => {
                 console.log(error)
             })
-        toast.success('Boa noite night city')
+        window.alert('Cadastro feito com sucesso')
     }
     const handleDelete = (id) => {
         axios.delete(`https://localhost:7279/api/Equipament/${id}`)
             .then(() => {
                 fetchData();
-                toast.success('Item excluído com sucesso!')
+                window.alert('Item excluído com sucesso!')
             })
             .catch((error) => {
                 console.log(error);
-                toast.error('Ocorreu um erro ao excluir o item.')
+                window.alert('Ocorreu um erro ao excluir o item.')
             })
     }
     

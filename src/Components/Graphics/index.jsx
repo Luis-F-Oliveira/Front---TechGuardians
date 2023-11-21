@@ -41,14 +41,18 @@ const Graphics = () => {
   }, [])
 
   return (
-    <div className="grid grid-cols-4 gap-4">
-      <div className="bg-white shadow-2xl h-60 w-60 flex flex-col justify-center items-center m-12">
-        <h1 className="text-7xl font-bold text-slate-800">{countValue}</h1>
-        <p className="mt-2 text-sm text-gray-500">Equipamentos</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="bg-white shadow-2xl h-60 flex flex-col justify-center items-center m-4">
+        <h1 className="text-8xl font-bold text-slate-800">{countValue}</h1>
+        <p className="mt-2 text-sm text-gray-500">Equipamentos Total</p>
       </div>
-      <div className="w-60 m-12 flex justify-center shadow-2xl flex items-center justify-center">
-        <ResponsiveContainer width="100%" height={200} className="mr-12">
-          <BarChart width={500} height={300} data={data}>
+      <div className="bg-white shadow-2xl h-60 flex flex-col justify-center items-center m-4">
+        <h1 className="text-8xl font-bold text-slate-800">{countValueEqp}</h1>
+        <p className="mt-2 text-sm text-gray-500">Equipamentos sendo monitorados</p>
+      </div>
+      <div className="bg-white shadow-2xl col-span-2 flex flex-col justify-center items-center m-4">
+        <ResponsiveContainer width="100%" height={250}>
+          <BarChart width={500} height={250} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="id" />
             <YAxis />
@@ -58,11 +62,8 @@ const Graphics = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <div className="bg-white shadow-2xl h-60 w-60 flex flex-col justify-center items-center m-12">
-        <h1 className="text-7xl font-bold text-slate-800">{countValueEqp}</h1>
-        <p className="mt-2 text-sm text-gray-500">Equipamentos Monitorados</p>
-      </div>
     </div>
+
   );
 };
 

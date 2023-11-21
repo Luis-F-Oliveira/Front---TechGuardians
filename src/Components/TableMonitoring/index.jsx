@@ -6,7 +6,6 @@ import { Button } from "../Button/style"
 import { FaTrash } from "react-icons/fa6"
 import { FaRegEdit } from "react-icons/fa"
 import ReactLoading from 'react-loading'
-// import { toast } from "react-toastify"
 
 const TableRoom = () => {
     const [data, setData] = useState([])
@@ -77,17 +76,17 @@ const TableRoom = () => {
             .catch((error) => {
                 console.log(error)
             })
-        // toast.success('Boa noite night city')
     }
     const handleDelete = (id) => {
         axios.delete(`https://localhost:7279/api/Monitoring/${id}`)
             .then(() => {
                 fetchData();
-                // toast.success('Item excluído com sucesso!')
+              
             })
             .catch((error) => {
                 console.log(error);
-                // toast.error('Ocorreu um erro ao excluir o item.')
+              
+                
             })
     }
 
