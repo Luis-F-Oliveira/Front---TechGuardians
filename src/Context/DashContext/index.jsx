@@ -6,12 +6,15 @@ export const dashContext = createContext()
 export function DashProvider ({children}) {
     const [render, setRender] = useState(false)
     const [renderTwo, setRenderTwo] = useState(false)
+    const [renderLast, setRenderLast] = useState(false)
 
     const contextValues = {
         render: render,
         setRender: setRender,
         renderTwo: renderTwo,
-        setRenderTwo: setRenderTwo
+        setRenderTwo: setRenderTwo,
+        renderLast: renderLast,
+        setRenderLast: setRenderLast
     }
     return (
         <dashContext.Provider value={contextValues}>

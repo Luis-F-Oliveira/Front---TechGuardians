@@ -6,7 +6,7 @@ const Container = ({children}) => {
   };
 
   return (
-    <div className='min-h-screen w-full flex flex-col'>
+    <div className='min-h-screen w-full flex flex-col overflow-hidden'>
       {children}
     </div>
   )

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { dashContext } from "../../Context/DashContext";
 
 const Index = () => {
-    const { setRender, setRenderTwo } = useContext(dashContext)
+    const { setRender, setRenderTwo, setRenderLast } = useContext(dashContext)
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -19,8 +19,8 @@ const Index = () => {
                 <ul className="flex flex-col mt-4 px-3">
                     <li className="flex flex-row justify-between items-start mb-2 gap-2">
                         <div className="flex items-start gap-2">
-                            <FaSchool size={20} />
-                            <p>Instituição</p>
+                            <FaSchool size={20} className="mt-1"/>
+                            <h1 className="text-lg font-bold">Instituição</h1>
                         </div>
                         {isOpen ? (
                             <RiArrowDropUpLine
@@ -35,16 +35,22 @@ const Index = () => {
                     </li>
                     {isOpen === true &&
                         <div className="ml-9 mt-2">
-                            <li className="flex-row mb-2"
+                            <li className="flex-row mb-2 cursor-pointer"
                                 onClick={() => setRender((prev) => !prev, setRenderTwo(false))}
                             >
                                 <p>Equipamentos</p>
                             </li>
-                            <li className="flex-row mb-2"
+                            <li className="flex-row mb-2 cursor-pointer"
                                 onClick={() => setRenderTwo((prev) => !prev,
-                                setRender(false))}
+                                setRender(false), setRenderLast(false))}
                             >
-                                <p>Salas</p>
+                                <p>Monitoramento</p>
+                            </li>
+                            <li className="flex-row mt-2 cursor-pointer"
+                                onClick={() => setRenderLast((prev) => !prev,
+                                setRender(false), setRenderTwo(false))}
+                            >
+                                <p>Dashboard</p>
                             </li>
                         </div>
                     }
